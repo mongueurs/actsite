@@ -2,6 +2,7 @@
    type = 'main'
    title = 'Act - A Conference Toolkit'
 %]
+[% PROCESS html_stuff %]
 
 <h1>[% template.title %]</h1>
 
@@ -10,6 +11,8 @@ Here is most of the available <a href="doc/">Act documentation</a>
 for conference organisers using Act.
 
 <h2>Act conferences</h2>
+
+[% WRAPPER box %]
 <h3>2005</h3>
 <ul>
 <li><a href="http://conferences.yapceurope.org/npw2005/">Nordic Perl Workshop</a></li>
@@ -19,8 +22,11 @@ for conference organisers using Act.
 <li><a href="http://conferences.yapceurope.org/fpw2005/">French Perl Workshop</a></li>
 <li><a href="http://conferences.yapceurope.org/apw2005/">Austrian Perl Workshop</a></li>
 </ul>
+[% END %]
 
+[% WRAPPER box %]
 <h3>2004</h3>
 <ul>
 <li><a href="http://conferences.yapceurope.org/fpw2004/">French Perl Workshop</a></li>
 </ul>
+[% END %]
