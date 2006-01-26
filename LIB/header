@@ -2,5 +2,6 @@
 <html>
 <head>
 <title>[% template.title | remove('<.*?>') %]</title>
+<link rel="stylesheet" href="/css/act.css" type="text/css">
 </head>
 <body bgcolor="#ffffff">
