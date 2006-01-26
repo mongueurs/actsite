@@ -1,0 +1,75 @@
+<html><body bgcolor="#ffffff">
+<h1>SETTING UP A NEW LANGUAGE IN ACT</h1>
+
+<p>Act is meant to support multilingual conferences.
+When you start your conference, you just have to decide which
+languages will be supported. This usually includes at least
+English and your own language.</p>
+<p>If your language is not yet supported by Act, don't panic.
+That just means you'll have to help us translate all the templates,
+and translations.</p>
+<h2>Translating templates</h2>
+<p>Multilingual templates are set up directly in the HTML, with the help
+of the special tag &lt;t&gt; ... &lt;/t&gt;.</p>
+<pre>    find templates -type f | xargs grep -c '&lt;t&gt;' |grep -v :0</pre>
+
+<p>Will list the template files that contain the &lt;t&gt; tag.</p>
+<p>Here's a very simple example:</p>
+<pre>    &lt;t&gt;
+     &lt;en&gt;Welcome on the YAPC::Europe web site!&lt;/en&gt;
+     &lt;pt&gt;Boa vinda no web site de YAPC::Europe!&lt;/pt&gt;
+     &lt;fr&gt;Bienvenue sur le site de YAPC::Europe&amp;nbsp;!&lt;/fr&gt;
+     &lt;de&gt;Willkommen auf der YAPC::Europe web site!&lt;/de&gt;
+     &lt;it&gt;Benvenuto sul Web site di YAPC::Europe!&lt;/it&gt;
+    &lt;/t&gt;</pre>
+
+<p>You'll also have to add the languages you need to all your specific
+static pages.</p>
+<h2>The 'translations' table</h2>
+<p>There is one database table that holds a number of hard-coded translations.
+These include:</p>
+<ul>
+<li><a name="item_civility"></a><b>civility</b>
+<p>In English, these are:</p>
+<pre>    1        Mr.
+    2        Mrs.
+    3        Ms.</pre>
+
+</li>
+<li><a name="item_ISO_3166_country_codes"></a><b>ISO-3166 country codes</b>
+<p>See <a href="http://www.ics.uci.edu/pub/websoft/wwwstat/country-codes.txt">http://www.ics.uci.edu/pub/websoft/wwwstat/country-codes.txt</a></p>
+<p>You'll need to translate <b>all</b> of them.</p>
+</li>
+<li><a name="item_A_few_hard_coded__room__names"></a><b>A few hard-coded "room" names</b>
+<p>In English, these are:</p>
+<pre>    out      Outside
+    venue    Venue</pre>
+
+</li>
+<li><a name="item_The_payment_means"></a><b>The payment means</b>
+<pre>    CHQ      Cheque
+    CASH     Cash
+    ONLINE   Online</pre>
+
+</li>
+</ul>
+<p>You can extract the English list from <i>database/fill_db.sql</i> with
+the following one-liner:</p>
+<pre>    perl -ne'$p=$1eq"ENGLISH"if/\/\*\* (\w+)/;print if$p' database/fill_db.sql</pre>
+
+<p>Then you'll just have to translate it. Unless otherwise specified,
+you do not need to translate the country names.</p>
+<h2>Act::Util</h2>
+<p>The Act::Util module contains some information about how dates are
+handled in each supported language. The structure needs to be updated
+for any new language.</p>
+<p>Here's the structure for English:</p>
+<pre>    en =&gt; { name               =&gt; 'English',
+            fmt_datetime_full  =&gt; '%A %B %e, %Y %H:%M',
+            fmt_datetime_short =&gt; '%m/%d/%y %H:%M',
+            fmt_date_full      =&gt; '%A %B %e, %Y',
+            fmt_date_short     =&gt; '%m/%d/%y',
+            fmt_time           =&gt; '%H:%M',
+          },</pre>
+
+</body></html>
