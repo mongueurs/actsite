@@ -1,0 +1,11 @@
+.box {
+  float: left;
+  width: 45%;
+  margin-right: 1em;
+}
+
+.box h3 {
+  margin: 0px;
+  border-bottom: solid black 2px;
+}
+
