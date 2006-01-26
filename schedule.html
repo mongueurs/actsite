@@ -1,0 +1,81 @@
+<html><body bgcolor="#ffffff">
+<h1>TALK SCHEDULE WITH ACT</h1>
+
+<p>Once you have enough accepted talks, you can start working out
+the talk schedule.</p>
+<p>Here are a few general tips:</p>
+<ul>
+<li>
+<p>Print the talk list, try to find a few general groups, and try to
+group them in tracks. Ideally, someone interested in say, XML, or Security
+should be able to follow all talks related to their pet subject
+without changing rooms.</p>
+</li>
+<li>
+<p>You should know your speakers or their subject enough to decide which
+speakers/talks get the big room.</p>
+</li>
+<li>
+<p>Leave 5 minutes between talks. It always takes the speakers some time
+to set up their material. It also takes time to kick the previous
+speaker out. ;-)</p>
+</li>
+<li>
+<p>Count 1 minute between two lightning talks (you need time to swap speakers)
+So, that's ten 5 minutes lightning talks per hour.</p>
+</li>
+<li>
+<p>Do not pit any talker against the lightning talks. The lightning talks
+will win.</p>
+</li>
+</ul>
+<p>Once you've worked out a rough draft of the schedule, you can start
+using Act to edit the talks date, time and room. You can also change
+the duration, but discuss it with the speaker first.</p>
+<h1>THE SCHEDULE</h1>
+
+<h2>How it looks</h2>
+<p>People with the 'orga' bit set can always see (and edit) the schedule. It
+becomes public when the [talks] item named "show_schedule" is set to 1.</p>
+<p>The first time you'll look at the schedule, it'll be ugly : all the
+talks are schedule to a non existing room at the same time. This will
+change once you assigned a room to each talk.</p>
+<p>The HTML table uses as many styles as you have rooms, plus three. Imagine
+you have three rooms, the table will use the following styles: header,
+out, venue, r1, r2 and r3. Please note that you do not need to define
+your own CSS for this: simply load the style located at /css/schedule.css
+with &lt;link rel="stylesheet" type="text/css" href="/css/schedule.css" /&gt;.</p>
+<p>We'll add new colours when a conference has more than three rooms.</p>
+<h2>How it works</h2>
+<p>Act can lay out the schedule when there are talks with a date and room
+defined. It should gracefully show overlapping talks, so that you can detect
+there is a problem.</p>
+<p>Events are basically talks without a speaker. Only events can happen in
+rooms 'out' and 'venue'.</p>
+<p>Rooms 'out' and 'venue' are special in the sense that events occuring
+there prevent talks from happening and actually "cut" any overlapping
+talk in two. One part before the event (usually a coffee break) and
+the remaining time after.</p>
+<p>Only hour-long tutorial should be cut by events.</p>
+<p>There are some cases for which Act does not display the schedule
+properly (this should not happen once your schedule is finished, since
+you shouldn't have any overlapping talks). Please let us know when
+this happens.</p>
+<p>Events are:</p>
+<ul>
+<li>
+<p>the coffee breaks, lunch</p>
+</li>
+<li>
+<p>anything happening outside the conference (pub crawls, etc.)</p>
+</li>
+<li>
+<p>special talks without a defined speaker.</p>
+</li>
+</ul>
+<p>Lightning talks sessions are currently not fully handled by Act. One
+can submit a lightning talk, which will be accepted or not, as for the
+other talks. But you'll need to create one or several "lightning talks"
+events in which you'll paste the list of lightning talks. We should
+probably fix this.</p>
+</body></html>
