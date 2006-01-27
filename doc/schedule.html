@@ -35,24 +35,24 @@ the duration, but discuss it with the speaker first.</p>
 <h1>THE SCHEDULE</h1>
 
 <h2>How it looks</h2>
-<p>People with the 'orga' bit set can always see (and edit) the schedule. It
-becomes public when the [talks] item named "show_schedule" is set to 1.</p>
-<p>The first time you'll look at the schedule, it'll be ugly : all the
+<p>People with the <code>orga</code> bit set can always see (and edit) the schedule. It
+becomes public when the <code>[talks]</code> item named <code>show_schedule</code> is set to 1.</p>
+<p>The first time you'll look at the schedule, it'll be ugly: all the
 talks are schedule to a non existing room at the same time. This will
 change once you assigned a room to each talk.</p>
 <p>The HTML table uses as many styles as you have rooms, plus three. Imagine
-you have three rooms, the table will use the following styles: header,
-out, venue, r1, r2 and r3. Please note that you do not need to define
-your own CSS for this: simply load the style located at /css/schedule.css
-with &lt;link rel="stylesheet" type="text/css" href="/css/schedule.css" /&gt;.</p>
+you have three rooms, the table will use the following styles: <code>header</code>,
+<code>out</code>, <code>venue</code>, <code>r1</code>, <code>r2</code> and <code>r3</code>. Please note that you do not need to define
+your own CSS for this: simply load the style located at <i>/css/schedule.css</i>
+with <code>&lt;link rel="stylesheet" type="text/css" href="/css/schedule.css" /&gt;</code>.</p>
 <p>We'll add new colours when a conference has more than three rooms.</p>
 <h2>How it works</h2>
 <p>Act can lay out the schedule when there are talks with a date and room
 defined. It should gracefully show overlapping talks, so that you can detect
 there is a problem.</p>
 <p>Events are basically talks without a speaker. Only events can happen in
-rooms 'out' and 'venue'.</p>
-<p>Rooms 'out' and 'venue' are special in the sense that events occuring
+rooms <code>out</code> and <code>venue</code>.</p>
+<p>Rooms <code>out</code> and <code>venue</code> are special in the sense that events occuring
 there prevent talks from happening and actually "cut" any overlapping
 talk in two. One part before the event (usually a coffee break) and
 the remaining time after.</p>
