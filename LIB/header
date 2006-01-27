@@ -5,3 +5,4 @@
 <link rel="stylesheet" href="/css/act.css" type="text/css">
 </head>
 <body bgcolor="#ffffff">
+[% PROCESS menu %]

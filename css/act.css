@@ -16,3 +16,11 @@ pre, code {
   border-bottom: solid black 2px;
 }
 
+.header {
+  font-size: small;
+}
+
+.footer {
+  font-size: x-small;
+  text-align: right;
+}
