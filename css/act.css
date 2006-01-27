@@ -1,3 +1,10 @@
+/* styles */
+pre, code {
+  background-color: lightgrey;
+  border: solid grey 1px;
+}
+
+/* classes */
 .box {
   float: left;
   width: 45%;
