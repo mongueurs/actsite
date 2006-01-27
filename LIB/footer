@@ -1,7 +1,8 @@
 [% USE date %]
 <!-- FOOTER -->
+<div class="footer">
 <hr />
-<div class="footer">Latest modification: 
+Latest modification: 
 [% date.format(template.modtime, '%Y-%m-%d %H:%M') %]
 </div>
 </body>
