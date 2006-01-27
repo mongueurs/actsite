@@ -4,6 +4,10 @@ pre, code {
   border: solid grey 1px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  clear: left;
+}
+
 /* classes */
 .box {
   float: left;
@@ -21,6 +25,7 @@ pre, code {
 }
 
 .footer {
+  clear: left;
   font-size: x-small;
   text-align: right;
 }
