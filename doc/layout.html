@@ -11,8 +11,9 @@
 (i.e. sent to the client without any processing: files, CSS, etc.)</p>
 </li>
 </ul>
-<p>You organise <i>wwwdocs</i> as you please. There will be a TT2 macro to create
-correct links to any file in the directory, given its relative path.</p>
+<p>You organise <i>wwwdocs</i> as you please. To link to files stored in
+your <i>wwwdocs</i> directory, use <code>&lt;a href="/yourconf/path/to/file"&gt;</code>,
+where <i>yourconf</i> is your conference id (e.g. ye2005, fpw2006, etc.).</p>
 <p>The <i>actdocs</i> directory is laid out as follows:</p>
 <ul>
 <li><a name="item__i_conf___i_"></a><b><i>conf/</i></b>
@@ -40,6 +41,7 @@ website, you'll only need the static and template subdirectories.</p>
 <pre>    [% make_uri('news.html') %]</pre>
 
 <p>The parameter being the file path relative to <i>actdocs/static</i>.</p>
+<p>Links to real stati</p>
 <p>Please note that at least one template is required: <i>actdocs/templates/ui</i>
 This file contains a TT2 wrapper that will be used by the framework
 to create full pages from the bits of HTML it generates.</p>
@@ -54,6 +56,7 @@ Here an example of what you can do:</p>
 <pre>    [% title = title.${global.request.language} %]
     &lt;html&gt;
     &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="/myconf/css/style.css" /&gt;
     &lt;title&gt;[% title %]&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
@@ -86,10 +89,11 @@ But it is rarely needed.</p>
 choice, but it will only produce pages in the languages configured in
 the conference. If you decide that your site must be in en/pt, even if
 Act know how to display pages in other languages, no language other than
-the official languages for the conference will be displayed. (Note to
-Eric: we'll need to keep track of language preferences per Act subsite)</p>
+the official languages for the conference will be displayed.</p>
 <p>Act provides menu templates for all the categories provided by the
-framework. You can therefore create your own menus very easily:</p>
+framework. You can therefore create your own menus very easily
+(e.g. in a file named <i>templates/menu</i> that can be PROCESSed in your
+<i>templates/ui</i> template):</p>
 <pre>    &lt;!-- user info, login, language --&gt;
     [% PROCESS menus/user %]
     &lt;!-- users list, search, stats --&gt;
@@ -106,7 +110,8 @@ framework. You can therefore create your own menus very easily:</p>
     [% PROCESS menus/act_confs %]</pre>
 
 <p>If you want to integrate those menus in you UI, you'll only have to
-redefine the following templates in the <i>actdocs/templates</i> directory.
+redefine the following templates in the <i>actdocs/templates</i> directory
+(because the submenus use the <i>menus/item</i> and <i>menus/section</i> templates).
 For example:</p>
 <ul>
 <li><a name="item__i_actdocs_templates_menus_item__i_"></a><b><i>actdocs/templates/menus/item</i></b>
@@ -119,4 +124,4 @@ For example:</p>
 </li>
 </ul>
 <p>The various menus and links are activated and shown according to each
-user's rights.</p>
+user's rights and the conference current configuration.</p>
