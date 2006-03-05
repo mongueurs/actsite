@@ -46,6 +46,18 @@ you have three rooms, the table will use the following styles: <code>header</cod
 your own CSS for this: simply load the style located at <i>/css/schedule.css</i>
 with <code>&lt;link rel="stylesheet" type="text/css" href="/css/schedule.css" /&gt;</code>.</p>
 <p>We'll add new colours when a conference has more than three rooms.</p>
+<p>If you want to add some static information to the schedule
+(for example sponsor information), create a new template in
+<i>actdocs/templates/talk/schedule</i>, based on the following:</p>
+<pre>    [% WRAPPER ui
+       title = { en =&gt; 'Schedule', fr =&gt; 'Emploi du temps', it =&gt; 'Programma', pt =&gt; 'Programa', de =&gt; 'Programm', hu =&gt; 'Idõbeosztás'}
+    %]
+    
+    &lt;!-- The schedule table --&gt;
+    [% PROCESS schedule_table %]
+    
+    [% END %]</pre>
+
 <h2>How it works</h2>
 <p>Act can lay out the schedule when there are talks with a date and room
 defined. It should gracefully show overlapping talks, so that you can detect
