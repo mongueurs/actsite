@@ -18,7 +18,7 @@ speakers/talks get the big room.</p>
 <li>
 <p>Leave 5 minutes between talks. It always takes the speakers some time
 to set up their material. It also takes time to kick the previous
-speaker out. ;-)</p>
+speaker out. <code>;-)</code></p>
 </li>
 <li>
 <p>Count 1 minute between two lightning talks (you need time to swap speakers)
@@ -37,15 +37,20 @@ the duration, but discuss it with the speaker first.</p>
 <h2>How it looks</h2>
 <p>People with the <code>orga</code> bit set can always see (and edit) the schedule. It
 becomes public when the <code>[talks]</code> item named <code>show_schedule</code> is set to 1.</p>
-<p>The first time you'll look at the schedule, it'll be ugly: all the
-talks are schedule to a non existing room at the same time. This will
-change once you assigned a room to each talk.</p>
+<p>The first time you'll look at the schedule, it'll probably be empty:
+all the talks that have no assigned room and date/time are in a list at
+the top of the page.</p>
+<p>Once you've assigned a room and a date/time to a talk/event, it will be
+shown in the schedule. The system tries to show conflicting items (two talks
+at the same time in the same place) in a nice way.</p>
 <p>The HTML table uses as many styles as you have rooms, plus three. Imagine
 you have three rooms, the table will use the following styles: <code>header</code>,
-<code>out</code>, <code>venue</code>, <code>r1</code>, <code>r2</code> and <code>r3</code>. Please note that you do not need to define
-your own CSS for this: simply load the style located at <i>/css/schedule.css</i>
-with <code>&lt;link rel="stylesheet" type="text/css" href="/css/schedule.css" /&gt;</code>.</p>
-<p>We'll add new colours when a conference has more than three rooms.</p>
+<code>out</code>, <code>venue</code>, <code>r1</code>, <code>r2</code> and <code>r3</code>. (If you have four rooms, a
+style <code>r4</code> will automatically be used, and so on.)</p>
+<p>You can either define those styles in you stylesheet, or simply load the
+style located at <i>/css/schedule.css</i> with
+<code>&lt;link rel="stylesheet" type="text/css" href="/css/schedule.css" /&gt;</code>.
+We'll add new colours when a conference has more than three rooms.</p>
 <p>If you want to add some static information to the schedule
 (for example sponsor information), create a new template in
 <i>actdocs/templates/talk/schedule</i>, based on the following:</p>
@@ -68,8 +73,8 @@ rooms <code>out</code> and <code>venue</code>.</p>
 there prevent talks from happening and actually "cut" any overlapping
 talk in two. One part before the event (usually a coffee break) and
 the remaining time after.</p>
-<p>Only hour-long tutorial should be cut by events.</p>
-<p>There are some cases for which Act does not display the schedule
+<p>Only hour-long tutorials should be cut by events.</p>
+<p>There may be some cases for which Act does not display the schedule
 properly (this should not happen once your schedule is finished, since
 you shouldn't have any overlapping talks). Please let us know when
 this happens.</p>
@@ -79,7 +84,7 @@ this happens.</p>
 <p>the coffee breaks, lunch</p>
 </li>
 <li>
-<p>anything happening outside the conference (pub crawls, etc.)</p>
+<p>anything happening outside the conference rooms (pub crawls, etc.)</p>
 </li>
 <li>
 <p>special talks without a defined speaker.</p>
