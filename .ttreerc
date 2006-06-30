@@ -3,6 +3,7 @@ preserve
 
 ignore = \b(CVS|RCS|LIB)\b
 ignore = ^#
+ignore = \.svn$
 ignore = \.swp$
 ignore = \.ttreerc
 
