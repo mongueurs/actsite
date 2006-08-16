@@ -1,0 +1,47 @@
+[% TAGS <% %> %]
+<h1>ONLINE PAYMENT ARCHITECTURE</h1>
+
+<p>This document describes the architecture of Act's online payment subsystem.
+This system defers the actual purchasing to a third party, usually a bank.
+We allow for pluggable backends to target various online payment solutions.
+Currently implemented backends are Act::Payment::CyberMut, used by the
+YEF, and Act::Payment::Fake, which emulates a purchase for testing purposes.</p>
+<p>Here at YEF payments for various conferences are all handled by the same
+account. This led to add hooks in the system to allow integration with
+foreign code bases, for such purposes as accounting, reporting, etc.</p>
+<p>The system is configured from each conference's <code>conf/act.ini</code> configuration
+file.</p>
+<pre>  [payment]
+  open        = 1
+  type        = CyberMut</pre>
+
+<p>Set <code>open</code> to 1 to enable, or to 0 to disable, the online payment system.
+<code>type</code> can be set to any valid backend. Current valid backends are
+<code>CyberMut</code> and <code>Fake</code>.</p>
+<p>Let's now walk through the steps involved in a purchase.</p>
+<ul>
+<li>
+<p>In her main page, a user is invited to purchase a ticket to the conference
+if she's registered and hasn't yet paid.</p>
+</li>
+<li>
+<p>Clicking the <code>purchase</code> button invokes <code>Act::Handler::User::Purchase</code>.
+This fetches the prices from the database table and displays the
+purchase form via <code>templates/user/purchase</code>. This template can be overriden
+and customized on a per-conference basis.</p>
+</li>
+<li>
+<p>When a purchase form with a valid price is submitted,  <code>Act::Handler::User::Purchase</code>
+creates a new order in the database with a status of <code>init</code>.</p>
+<p>We then call the plugged backend (<code>Act::Payment::Foo</code>) to create a form
+which contains encrypted information about the purchase order. When this form
+is submitted, the user is taken to the bank's web site.</p>
+</li>
+<li>
+<p>The bank handles credit card input and validation, and offers a link back
+to the user's main page in the conference.</p>
+</li>
+<li>
+<p>Meanwhile, the bank sends us an HTTP request with the status of the purchase.</p>
+</li>
+</ul>
