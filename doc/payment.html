@@ -4,8 +4,8 @@
 <p>This document describes the architecture of Act's online payment subsystem.
 This system defers the actual purchasing to a third party, usually a bank.
 We allow for pluggable backends to target various online payment solutions.
-Currently implemented backends are Act::Payment::CyberMut, used by the
-YEF, and Act::Payment::Fake, which emulates a purchase for testing purposes.</p>
+Currently implemented backends are YEF, used by the YAPC::Europe Foundation,
+Fake, which emulates a purchase for testing purposes.</p>
 <p>Here at YEF payments for various conferences are all handled by the same
 account. This led to add hooks in the system to allow integration with
 foreign code bases, for such purposes as accounting, reporting, etc.</p>
@@ -13,11 +13,11 @@ foreign code bases, for such purposes as accounting, reporting, etc.</p>
 file.</p>
 <pre>  [payment]
   open        = 1
-  type        = CyberMut</pre>
+  type        = YEF</pre>
 
 <p>Set <code>open</code> to 1 to enable, or to 0 to disable, the online payment system.
 <code>type</code> can be set to any valid backend. Current valid backends are
-<code>CyberMut</code> and <code>Fake</code>.</p>
+<code>YEF</code> and <code>Fake</code>.</p>
 <p>Let's now walk through the steps involved in a purchase.</p>
 <ul>
 <li>
