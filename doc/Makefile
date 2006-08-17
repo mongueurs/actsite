@@ -7,7 +7,7 @@ PODFILES = $(wildcard ../../act/doc/*.pod)
 # target html files
 HTML = $(patsubst ../../act/doc/%.pod,%.html,$(PODFILES))
 
-all: $(HTML)
+all: svnup $(HTML)
 
 # action !
 %.html: ../../act/doc/%.pod
@@ -15,3 +15,6 @@ all: $(HTML)
 	grep -vE '<body|</body>' | \
 	perl -0777 -pi -e 's|</pre>(\n+)<pre>|$$1|gi' \
 	> $@
+
+svnup:
+	pushd ../../act/doc ; svn up -q ; popd
