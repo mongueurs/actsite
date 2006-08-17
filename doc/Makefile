@@ -1,7 +1,10 @@
-# les fichiers sources
+# this Makefile assumes that the act/ and actsite/ working directories
+# were checked out in the same subdirectory
+
+# source pod files
 PODFILES = $(wildcard ../../act/doc/*.pod)
 
-# les cibles finales
+# target html files
 HTML = $(patsubst ../../act/doc/%.pod,%.html,$(PODFILES))
 
 all: $(HTML)
