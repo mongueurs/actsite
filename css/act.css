@@ -1,4 +1,7 @@
-/* styles */
+body {
+  font-family: Helvetica, sans-serif;
+}
+
 pre, code {
   background-color: lightgrey;
   border: solid grey 1px;
@@ -6,6 +9,7 @@ pre, code {
 
 h1, h2, h3, h4, h5, h6 {
   clear: left;
+  font-family: Georgia, Garamond, Helvetica, sans-serif;
 }
 
 /* classes */
