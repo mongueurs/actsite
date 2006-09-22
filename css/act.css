@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, Garamond, Helvetica, sans-serif;
 }
 
+h2 {
+  text-decoration: underline;
+}
+
 p {
    margin-left: 1em;
 }
