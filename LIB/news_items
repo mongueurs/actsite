@@ -16,13 +16,14 @@
    title = 'Act is now truly Open Source'
 %]
 <p>
-We have finally sorted the licensing out, and decided to go with the
+After so many years of procrastination,
+we have finally sorted the licensing out, and decided to go with the
 classic dual Artistic/GPL license used by Perl.
 </p><p>
 The repository is now accessible read-only to everyone interested,
 at <tt>svn://svn.mongueurs.net/act/</tt>.
 There is also a SVN::Web interface at
-<a href="http://svnweb.mongueurs.net/act/">http://svnweb.mongueurs.net/act/</a>.
+<a href="http://svnweb.mongueurs.net/act/">http://svnweb.mongueurs.net/Act/</a>.
 </p>
 [% END %] 
 
