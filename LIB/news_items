@@ -13,7 +13,7 @@
 
 [% WRAPPER add_news_item
    date  = '00:00:00 26-01-2007'
-   title = 'Act is now Open Source'
+   title = 'Act is now truly Open Source'
 %]
 <p>
 We have finally sorted the licensing out, and decided to go with the
