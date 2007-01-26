@@ -40,13 +40,22 @@ organisation of the repository).
 [% END %]
 
 [% WRAPPER box %]
-<h2>More information</h2>
-<p>
-Here you can find more information about:
-</p>
+<h2>Miscellaneous information</h2>
+<p>Latest news:</p>
+<ul>
+[% PROCESS news_items %]
+[% USE date %]
+[% FOREACH item = news.list.splice(0,3) %]
+<li>[% date.format(item.date, format = '%B %e, %Y', locale='C' ) %]&nbsp;-
+<a href="news.html#[% item.anchor %]">[% item.title %]</a></li>
+[% END %]
+</ul>
+<p>Here you can find more information about:</p>
 <ul>
 <li><a href="/conferences.html">Act conferences</a></li>
 <li><a href="/history.html">Act history</a></li>
+<li><a href="/news.html">Act news</a></li>
 </ul>
+<p>
 [% END %]
 
