@@ -1,0 +1,28 @@
+[%
+ news = { list => [], year => {} } ;
+ BLOCK add_news_item;
+     item = { date => date, title => title, text => content };
+     year = item.date.match( '(\d\d\d\d)$' ).0;
+     item.anchor = item.date.match( '(\d\d)-(\d\d)-(\d\d\d\d)' ).reverse.join('');
+     news.list.push(item);
+     IF ! news.year.exists( year ); news.year.$year = [ ]; END;
+     news.year.$year.push( item );
+ END
+%]
+[%# add new item just below, in reverse chronological order %]
+
+[% WRAPPER add_news_item
+   date  = '00:00:00 26-01-2007'
+   title = 'Act is now Open Source'
+%]
+<p>
+We have finally sorted the licensing out, and decided to go with the
+classic dual Artistic/GPL license used by Perl.
+</p><p>
+The repository is now accessible read-only to everyone interested,
+at <code>svn://svn.mongueurs.net/act/</code>.
+There is also a SVN::Web interface at
+<a href="http://svnweb.mongueurs.net/act/">http://svnweb.mongueurs.net/act/</a>.
+</p>
+[% END %] 
+
