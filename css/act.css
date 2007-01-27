@@ -25,11 +25,13 @@ p {
 .box {
   float: left;
   width: 49%;
+  margin-right: 5px;
 }
 
 .box h3 {
   margin: 0px;
   border-bottom: solid black 2px;
+  padding-left: 5px;
 }
 
 .header {
