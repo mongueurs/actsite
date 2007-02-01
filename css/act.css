@@ -28,8 +28,11 @@ p {
   margin-right: 5px;
 }
 
+.box h2,h3 {
+  margin-top: 0px;
+}
+
 .box h3 {
-  margin: 0px;
   border-bottom: solid black 2px;
   padding-left: 5px;
 }
