@@ -1,6 +1,9 @@
 [% META title = 'Act documentation' %]
+[% PROCESS html_stuff %]
+
 <h1>[% template.title %]</h1>
-Here is the available documentation regarding Act:
+[% WRAPPER box %]
+<h2>Core documentation</h2>
 <ul>
 <li><a href="layout.html">Document layout</a></li>
 <li><a href="ini_file.html">The act.ini file</a></li>
@@ -8,4 +11,12 @@ Here is the available documentation regarding Act:
 <li><a href="schedule.html">The schedule</a></li>
 <li><a href="payment.html">The payment plug-ins</a></li>
 </ul>
+[% END %]
+
+[% WRAPPER box %]
+<h2>Additional documents</h2>
+<ul>
+<li><a href="todo.html">The current TODO list</a></li>
+</ul>
+[% END %]
 
