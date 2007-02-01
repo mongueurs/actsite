@@ -1,0 +1,261 @@
+[% TAGS <% %> %]
+
+=head1 UNPRIORITIZED TODO LIST
+
+=over 4
+
+=item *
+
+let the organizers force the registration of existing users
+(useful for speakers who can't be bothered to use the site,
+but will give a talk)
+
+=item *
+
+the payments page should let the one create a new user, register it
+and add a payment (and use the code for finding duplicate users)
+(useful for on site registration during the conference)
+
+=item *
+
+convert the whole application to UTF8
+
+=item *
+
+replace Act::Form by Data::FormValidator
+
+=item *
+
+list and document all the templates in the application
+
+=item *
+
+divide the template content between structural information needed
+by the application (e.g. creation of the schedule, application
+forms) and presentation information which should be overridable by
+conference-specific templates
+
+=item *
+
+define a set of coherent CSS styles for the application templates,
+so that conference organizers may easily override the application
+look and feel, and integrate it into their web site
+
+=item *
+
+define a procedure (and possibly write some helper scripts) to
+manage the text modifications. When someone changes some text
+in the templates, the may be able to translate it at best in
+one or two other languages. Other translators need to be
+informed of the changes.
+
+=item *
+
+track management: organizers should be able to create tracks for
+their conference, speakers should be able to select a track for their talk
+
+=item *
+
+talk languages: define a set of accepted languages for a conference
+and let the speakers set the talk language
+
+=item *
+
+talk target audience: beginner, intermediate, advanced.
+
+=item *
+
+provide a full canonical url in each conf/act.ini for inter-conference links
+
+=item *
+
+move the existing conf/act.ini out of Act.
+
+=item *
+
+attendees: if a registered user doesn't show up, how is s/he counted?
+should there be a way for the organisers to mark the attendees as
+present?
+
+=item *
+
+password modification page
+
+=item *
+
+a website for managing one's profile outside any conference
+
+=item *
+
+some statistics for the organizers
+- T-shirts stats:
+  select count(*), tshirt_size from participations where conf_id=? group by tshirt_size;
+- family stats:
+  select sum(nb_family) from participations where conf_id=?
+
+=item *
+
+remove duplicate users from the database. this is an administrative task 
+which requires contacting users and asking which of their many logins
+to keep
+
+=item *
+
+problem with empty fields: they are not updated
+see: stay pseudonymous, remove company
+
+=item *
+
+there are 4 kinds or roles within a conference:
+- user management
+- talks management
+- payments management
+- rights management
+this implies a modification of the existing rights:
+- the name "orga" doesn't mean anything
+- "staff" has no clear domain
+- nowhere in the code should there be an "or" checking of rights
+  (like is_staff || is_orga): if some user needs to see such and
+  such parts of the site, they need the appropriate right
+
+=item *
+
+integrate a wiki into Act (using the Act users logins, maybe restricted
+to users registered to the conference)
+=> this is being developped in the dev branch.
+
+=item *
+
+http://conferences.yapceurope.org/2005/user/214
+The GPG key is often a very long string.
+=> we should just store a key id, keys can be fetched from GPG key servers.
+
+=item *
+
+most tables should be sortable by clicking on column headers.
+=> by default, sort the user search results by registration date, not
+   by user_id
+
+=item *
+
+when a conference is over, treasurer/orga should be able to unregister
+participants who didn't show up.
+
+=item *
+
+rights management
++ show rights in table format, users as lines, rights as columns,
+  with checkboxes to grant rights, and a listbox to add a new user.
+  - pro: everything is controlled through a single form (granting
+    and removing rights), better per user vision.
+  - against: the list of rights must be supplied
+    (at worse: select distinct right_id from rights should do it)
+
+=item *
+
+photo gallery? Links with Flickr? tags? links with talks? author?
+
+=item *
+
+image resizing
+
+=item *
+
+usefulness of global rights?
+
+=item *
+
+more tests, especially for the web interface
+
+=item *
+
+may a user have a different photograph every year?
+
+=item *
+
+change the "orga" right name
+
+=item *
+
+think about the user prefered language as a preference list:
+- ye2005,  pt => list = pt
+- fpw2005, fr => list = fr,pt
+- ipw2005, en => list = en,fr,pt
+at that point, we need to reconfigure the prefered language for
+the two other sites
+Another option is to add a lang field in participations, to have
+a favorite language per conference
+
+=item *
+
+global user stats (top attendee, top speaker, etc)
+
+=item *
+
+user-configurable searchlimit
+
+=item *
+
+support for several monger groups (addition, search)
+
+=item *
+
+get the production conf/ out of Act
+
+=item *
+
+PDF immutable invoices
+
+=item *
+
+replace Act::Object with a more trendy ORM
+
+=item *
+
+create a eg/ directory with at least two example conferences
+
+=item *
+
+support for per conference options, like
+- register the hotel (e.g. european hackathon 2007)
+- vegeratian food
+
+=item *
+
+hackathons do not have talks. Support that by disabling the talks
+related handlers.
+
+=item *
+
+add a list of the top ten countries of already registered users for
+the conference at the top of the country list when creating a new
+user on a conference
+
+=item *
+
+two-steps new user creation using a confirmation email
+and possibly a special validation URL
+
+=item *
+
+allow a conference to put a limit on the number of "paying" attendees
+=> it may actually need to be a limit to "committed" attendes, since
+   speakers often have the entrance fee waived
+
+=item *
+
+handle the edition of lightning talk sessions, by creating something
+less burdensome than the current talk:id 
+
+=item *
+
+have the wiki support talk:id links and user:id links (or something
+similar)
+
+=item *
+
+organizers can create new users, but there is no handler to manually
+register/unregister an existing user
+
+
+=back
