@@ -1,4 +1,4 @@
-[%
+[%-
  news = { list => [], year => {} } ;
  BLOCK add_news_item;
      item = { date => date, title => title, text => content };
@@ -8,13 +8,13 @@
      IF ! news.year.exists( year ); news.year.$year = [ ]; END;
      news.year.$year.push( item );
  END
-%]
+-%]
 [%# add new item just below, in reverse chronological order %]
 
-[% WRAPPER add_news_item
+[%- WRAPPER add_news_item
    date  = '00:00:00 26-01-2007'
    title = 'Act is now truly Open Source'
-%]
+-%]
 <p>
 After so many years of procrastination,
 we have finally sorted the licensing out, and decided to go with the
@@ -25,5 +25,5 @@ at <tt>svn://svn.mongueurs.net/act/</tt>.
 There is also a SVN::Web interface at
 <a href="http://svnweb.mongueurs.net/act/">http://svnweb.mongueurs.net/Act/</a>.
 </p>
-[% END %] 
+[%- END -%] 
 
