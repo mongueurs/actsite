@@ -78,17 +78,27 @@ to keep</p>
 see: stay pseudonymous, remove company</p>
 </li>
 <li>
-<p>there are 4 kinds or roles within a conference:
-- user management
-- talks management
-- payments management
-- rights management
-this implies a modification of the existing rights:
-- the name "orga" doesn't mean anything
-- "staff" has no clear domain
-- nowhere in the code should there be an "or" checking of rights
-  (like is_staff || is_orga): if some user needs to see such and
-  such parts of the site, they need the appropriate right</p>
+<p>better rights management interface using a table</p>
+</li>
+<li>
+<p><b>current rights:</b> orga, treasurer, admin, staff, invited (no rights attached).</p>
+<p>better organisation: users, talks, orders, rights (i.e. attached to the
+various things that Act can manage)</p>
+<p>nowhere in the code should there be an "or" checking of rights
+(like is_staff || is_orga): if some user needs to see such and
+such parts of the site, they need the appropriate right</p>
+<p><b>new rights:</b></p>
+<p>rights: rights management (= current 'admin' right)</p>
+<p>users: users management (= part of current 'orga' right), should only
+manage user registration, edition, etc</p>
+<p>talks: talks management (= part of currnet 'orga' right), should only
+manage talks acceptation, edition, schedule</p>
+<p>orders: orders management (= current 'treasurer' right)</p>
+</li>
+<li>
+<p>'staff' and 'invited' are not rights giving access to special function
+within Act, but rather "tags" on some users, relative to a specific
+conference</p>
 </li>
 <li>
 <p><a href="http://conferences.yapceurope.org/2005/user/214">http://conferences.yapceurope.org/2005/user/214</a>
@@ -184,7 +194,9 @@ and possibly a special validation URL</p>
 <li>
 <p>handle the edition of lightning talk sessions, by creating something
 less burdensome than the current talk:id </p>
-<p>* have the wiki support talk:id links and user:id links (or something
-  similar)</p>
+</li>
+<li>
+<p>have the wiki support talk:id links and user:id links (or something
+similar)</p>
 </li>
 </ul>
