@@ -12,6 +12,26 @@
 [%# add new item just below, in reverse chronological order %]
 
 [%- WRAPPER add_news_item
+   date  = '15:00:00 02-02-2007'
+   title = 'Act at the first European Perl hackathon'
+-%]
+<p>
+Act will be one of the featured projects at the first
+<a href="http://conferences.yapceurope.org/hack2007nl/">European
+Perl hackathon</a>, in Arnhem, Netherlands. Incidentaly, the website
+of the hackathon is hosted on Act. <tt>:-)</tt>
+</p><p>
+Act-related projects will include:
+</p>
+<ul>
+<li>translations</li>
+<li>documentation</li>
+<li>new features from the copious <a href="/doc/todo.html">TODO list</a></li>
+<li>tests</li>
+</ul>
+[%- END -%]
+
+[%- WRAPPER add_news_item
    date  = '00:00:00 26-01-2007'
    title = 'Act is now truly Open Source'
 -%]
