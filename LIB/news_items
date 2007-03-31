@@ -12,6 +12,17 @@
 [%# add new item just below, in reverse chronological order %]
 
 [%- WRAPPER add_news_item
+   date  = '15:00:00 27-03-2007'
+   title = 'Act interfaces with The Perl Foundation'
+-%]
+<p>
+Act now supports the <a href="http://www.perlfoundation.org/">Perl Foundation</a>'s
+online payment system. <a href="http://conferences.mongueurs.net/yn2007/">YAPC::NA 2007</a>
+is the first Act conference to benefit from this new interface.
+</p>
+[%- END -%]
+
+[%- WRAPPER add_news_item
    date  = '15:00:00 02-02-2007'
    title = 'Act at the first European Perl hackathon'
 -%]
