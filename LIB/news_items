@@ -12,6 +12,18 @@
 [%# add new item just below, in reverse chronological order %]
 
 [%- WRAPPER add_news_item
+   date  = '20:45:00 03-04-2007'
+   title = 'Act now uses Unicode in production'
+-%]
+<p>
+Act now fully supports Unicode. The production sites have all been
+converted to Unicode/UTF-8.
+</p><p>
+Hear! Hear! The path is clear for non latin-based translations...
+</p>
+[%- END -%]
+
+[%- WRAPPER add_news_item
    date  = '15:00:00 27-03-2007'
    title = 'Act interfaces with The Perl Foundation'
 -%]
