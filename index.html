@@ -55,7 +55,7 @@ organisation of the repository.)
 [% PROCESS news_items %]
 [% USE date %]
 [% FOREACH item = news.list.splice(0,3) %]
-<li>[% date.format(item.date, format = '%B %e, %Y', locale='C' ) %]&nbsp;-
+<li>[% date.format(item.date, format = '%B %e, %Y', locale='C' ) %]:<br />
 <a href="news.html#[% item.anchor %]">[% item.title %]</a></li>
 [% END %]
 </ul>
