@@ -3,12 +3,15 @@
 
 <p>This document describes the architecture of Act's online payment subsystem.
 This system defers the actual purchasing to a third party, usually a bank.
-We allow for pluggable backends to target various online payment solutions.
-Currently implemented backends are YEF, used by the YAPC::Europe Foundation,
-Fake, which emulates a purchase for testing purposes.</p>
-<p>Here at YEF payments for various conferences are all handled by the same
-account. This led to add hooks in the system to allow integration with
-foreign code bases, for such purposes as accounting, reporting, etc.</p>
+We allow for pluggable backends to target various online payment solutions.</p>
+<p>Currently implemented backends are YEF, used by the YAPC::Europe Foundation,
+and TPF, used by The Perl Foundation. Online payment funds end up in the
+selected foundation's bank account. The foundation then forwards them back to the
+organizers. Using either backend requires prior agreement between the organizers
+and the relevant foundation.</p>
+<p>YEF currently accepts payments in euros. TPF currently accepts payments in
+US dollars.</p>
+<p>There's also a Fake backend which simulates a purchase for testing purposes.</p>
 <p>The system is configured from each conference's <code>conf/act.ini</code> configuration
 file.</p>
 <pre>  [payment]
@@ -16,8 +19,7 @@ file.</p>
   type        = YEF</pre>
 
 <p>Set <code>open</code> to 1 to enable, or to 0 to disable, the online payment system.
-<code>type</code> can be set to any valid backend. Current valid backends are
-<code>YEF</code> and <code>Fake</code>.</p>
+<code>type</code> should be set to the appropriate backend: <code>YEF</code>, <code>TPF</code> or <code>Fake</code>.</p>
 <p>Let's now walk through the steps involved in a purchase.</p>
 <ul>
 <li>
@@ -27,7 +29,7 @@ if she's registered and hasn't yet paid.</p>
 <li>
 <p>Clicking the <code>purchase</code> button invokes <code>Act::Handler::User::Purchase</code>.
 This fetches the prices from the database table and displays the
-purchase form via <code>templates/user/purchase</code>. This template can be overriden
+purchase form via <i>templates/user/purchase</i>. This template can be overriden
 and customized on a per-conference basis.</p>
 </li>
 <li>

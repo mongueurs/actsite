@@ -12,9 +12,6 @@ and add a payment (and use the code for finding duplicate users)
 (useful for on site registration during the conference)</p>
 </li>
 <li>
-<p>convert the whole application to UTF8</p>
-</li>
-<li>
 <p>replace Act::Form by Data::FormValidator</p>
 </li>
 <li>
@@ -74,13 +71,6 @@ which requires contacting users and asking which of their many logins
 to keep</p>
 </li>
 <li>
-<p>problem with empty fields: they are not updated
-see: stay pseudonymous, remove company</p>
-</li>
-<li>
-<p>better rights management interface using a table</p>
-</li>
-<li>
 <p><b>current rights:</b> orga, treasurer, admin, staff, invited (no rights attached).</p>
 <p>better organisation: users, talks, orders, rights (i.e. attached to the
 various things that Act can manage)</p>
@@ -101,29 +91,12 @@ within Act, but rather "tags" on some users, relative to a specific
 conference</p>
 </li>
 <li>
-<p><a href="http://conferences.yapceurope.org/2005/user/214">http://conferences.yapceurope.org/2005/user/214</a>
-The GPG key is often a very long string.
-=&gt; we should just store a key id, keys can be fetched from GPG key servers.</p>
-</li>
-<li>
 <p>most tables should be sortable by clicking on column headers.
 =&gt; by default, sort the user search results by registration date, not
    by user_id</p>
 </li>
 <li>
-<p>rights management
-+ show rights in table format, users as lines, rights as columns,
-  with checkboxes to grant rights, and a listbox to add a new user.
-  - pro: everything is controlled through a single form (granting
-    and removing rights), better per user vision.
-  - against: the list of rights must be supplied
-    (at worse: select distinct right_id from rights should do it)</p>
-</li>
-<li>
 <p>photo gallery? Links with Flickr? tags? links with talks? author?</p>
-</li>
-<li>
-<p>image resizing</p>
 </li>
 <li>
 <p>usefulness of global rights?</p>
@@ -157,9 +130,6 @@ a favorite language per conference</p>
 <p>support for several monger groups (addition, search)</p>
 </li>
 <li>
-<p>get the production conf/ out of Act</p>
-</li>
-<li>
 <p>PDF immutable invoices</p>
 </li>
 <li>
@@ -178,15 +148,6 @@ a favorite language per conference</p>
 related handlers.</p>
 </li>
 <li>
-<p>add a list of the top ten countries of already registered users for
-the conference at the top of the country list when creating a new
-user on a conference</p>
-</li>
-<li>
-<p>two-steps new user creation using a confirmation email
-and possibly a special validation URL</p>
-</li>
-<li>
 <p>allow a conference to put a limit on the number of "paying" attendees
 =&gt; it may actually need to be a limit to "committed" attendes, since
    speakers often have the entrance fee waived</p>
@@ -196,7 +157,61 @@ and possibly a special validation URL</p>
 less burdensome than the current talk:id </p>
 </li>
 <li>
-<p>have the wiki support talk:id links and user:id links (or something
-similar)</p>
+<p>shouldn't the tshirt size at user creation not be shown when the
+conference doesn't include a T-shirt?</p>
+</li>
+<li>
+<p>should the tshirt size be 'per conference'? (but copied from the
+info stored in the users base)</p>
+</li>
+<li>
+<p>Special Needs Support in a Flexible Way
+Registration should be able to accept information for many different things
+like the need of special meals, t-shirts size, special needs for
+accommodation and the like.  Registration for a specific event shouldn't
+include information which is irrelevant to that event.</p>
+</li>
+<li>
+<p>Closing Date
+It should be possible to close registrations before the event start date.</p>
+</li>
+<li>
+<p>Change Password Mechanism
+There should be a way to change passwords.</p>
+</li>
+<li>
+<p>User Identification
+The login page asks for "User Identification", and this is not really clear.
+It's difficult to say what is the "user identification" needed. Maybe the
+text could be a bit more specific.</p>
+</li>
+<li>
+<p>Tracking Suspicious Users
+There should be a way to track down, mark out and pay attention on
+/suspicious/ users, in special those that doesn't register properly or aren't
+known or findable. Those registrations cause a lot of trouble, making
+organizers to waste time and resources with room reservations, special meals
+and other resources for people that will never show up.</p>
+</li>
+<li>
+<p>Admin Statistics
+Admins and organizers should be able to have some statistics and accounting
+for his/her personal use. Simple things like "how many people will be present
+to the event?" or "how many of those people have special needs - special
+meals, special accommodations?" or "how many people are staying on the hotel
+we booked and how many aren't?" should do the trick.</p>
+</li>
+<li>
+<p>Optional SSL Protected Admin Login
+There should be an optional SSL protected login option, at least for admins,
+allowing them to login to the website without being evasedropped.</p>
+</li>
+<li>
+<p>Provide RSS Feeds to inform people interested on the projects.</p>
+</li>
+<li>
+<p>Make it clear how to register for an event.</p>
+<p>* Ensure users get clear and meaningful error messages when they get wrong
+  passwords or aren't registered in the system.</p>
 </li>
 </ul>

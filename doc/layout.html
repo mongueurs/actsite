@@ -55,8 +55,7 @@ enhancements, but shhh.</p>
 Here an example of what you can do:</p>
 <ul>
 <li><a name="item__i_actdocs_templates_ui__i_"></a><b><i>actdocs/templates/ui</i></b>
-<pre>    [% title = title.${global.request.language} %]
-    &lt;html&gt;
+<pre>    &lt;html&gt;
     &lt;head&gt;
     &lt;link rel="stylesheet" type="text/css" href="/myconf/css/style.css" /&gt;
     &lt;title&gt;[% title %]&lt;/title&gt;
@@ -68,13 +67,13 @@ Here an example of what you can do:</p>
 
 </li>
 <li><a name="item__i_actdocs_index_html__i_"></a><b><i>actdocs/index.html</i></b>
-<pre>    [% WRAPPER ui
-       title = {
+<pre>    title = {
           fr =&gt; 'Ma conférence'
           en =&gt; 'My conference'
           de =&gt; 'Mein Konferenz'
           pt =&gt; '...'
-       }
+       };
+       [% WRAPPER ui title = title.${global.request.language}
     %]
     &lt;t&gt;
      &lt;en&gt;Welcome!&lt;/en&gt;
@@ -100,6 +99,8 @@ framework. You can therefore create your own menus very easily
     [% PROCESS menus/user %]
     &lt;!-- users list, search, stats --&gt;
     [% PROCESS menus/users %]
+    &lt;!-- wiki --&gt;
+    [% PROCESS menus/wiki %]
     &lt;!-- talk lists, submission and schedule --&gt;
     [% PROCESS menus/talks %]
     &lt;!-- event management in the schedule --&gt;
