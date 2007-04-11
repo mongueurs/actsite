@@ -55,7 +55,8 @@ enhancements, but shhh.</p>
 Here an example of what you can do:</p>
 <ul>
 <li><a name="item__i_actdocs_templates_ui__i_"></a><b><i>actdocs/templates/ui</i></b>
-<pre>    &lt;html&gt;
+<pre>    [% title = title.${global.request.language} %]
+    &lt;html&gt;
     &lt;head&gt;
     &lt;link rel="stylesheet" type="text/css" href="/myconf/css/style.css" /&gt;
     &lt;title&gt;[% title %]&lt;/title&gt;
@@ -67,13 +68,13 @@ Here an example of what you can do:</p>
 
 </li>
 <li><a name="item__i_actdocs_index_html__i_"></a><b><i>actdocs/index.html</i></b>
-<pre>    title = {
+<pre>    [% title = {
           fr =&gt; 'Ma conférence'
           en =&gt; 'My conference'
           de =&gt; 'Mein Konferenz'
           pt =&gt; '...'
        };
-       [% WRAPPER ui title = title.${global.request.language}
+       WRAPPER ui title = title.${global.request.language}
     %]
     &lt;t&gt;
      &lt;en&gt;Welcome!&lt;/en&gt;
