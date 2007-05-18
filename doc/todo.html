@@ -1,5 +1,23 @@
-<h1>UNPRIORITIZED TODO LIST</h1>
+<h1>PRIORITIZED TODO LIST</h1>
 
+<ul>
+<li>
+<p>track management: organizers should be able to create tracks for
+their conference, speakers should be able to select a track for their talk</p>
+</li>
+<li>
+<p>talk languages: define a set of accepted languages for a conference
+and let the speakers set the talk language</p>
+</li>
+<li>
+<p>attendees should be able to pick one day out of the N days when they
+participate</p>
+</li>
+<li>
+<p>password modification page</p>
+</li>
+</ul>
+<h2>UNPRIORITIZED TODO LIST</h2>
 <ul>
 <li>
 <p>let the organizers force the registration of existing users
@@ -12,51 +30,15 @@ and add a payment (and use the code for finding duplicate users)
 (useful for on site registration during the conference)</p>
 </li>
 <li>
-<p>replace Act::Form by Data::FormValidator</p>
-</li>
-<li>
-<p>list and document all the templates in the application</p>
-</li>
-<li>
-<p>divide the template content between structural information needed
-by the application (e.g. creation of the schedule, application
-forms) and presentation information which should be overridable by
-conference-specific templates</p>
-</li>
-<li>
 <p>define a set of coherent CSS styles for the application templates,
 so that conference organizers may easily override the application
 look and feel, and integrate it into their web site</p>
-</li>
-<li>
-<p>define a procedure (and possibly write some helper scripts) to
-manage the text modifications. When someone changes some text
-in the templates, the may be able to translate it at best in
-one or two other languages. Other translators need to be
-informed of the changes.</p>
-</li>
-<li>
-<p>track management: organizers should be able to create tracks for
-their conference, speakers should be able to select a track for their talk</p>
-</li>
-<li>
-<p>talk languages: define a set of accepted languages for a conference
-and let the speakers set the talk language</p>
-</li>
-<li>
-<p>talk target audience: beginner, intermediate, advanced.</p>
 </li>
 <li>
 <p>attendees: if a registered user doesn't show up, how is s/he counted?
 should there be a way for the organisers to mark the attendees as
 present? When a conference is over, treasurer/orga should be able to
 unregister participants who didn't show up.</p>
-</li>
-<li>
-<p>password modification page</p>
-</li>
-<li>
-<p>a website for managing one's profile outside any conference</p>
 </li>
 <li>
 <p>some statistics for the organizers
@@ -86,34 +68,18 @@ manage talks acceptation, edition, schedule</p>
 <p>orders: orders management (= current 'treasurer' right)</p>
 </li>
 <li>
-<p>most tables should be sortable by clicking on column headers.
-=&gt; by default, sort the user search results by registration date, not
+<p>most tables should be sortable by clicking on column headers.</p>
+<p><b>=&gt;</b> by default, sort the user search results by registration date, not
    by user_id</p>
 </li>
 <li>
 <p>photo gallery? Links with Flickr? tags? links with talks? author?</p>
 </li>
 <li>
-<p>usefulness of global rights?</p>
-</li>
-<li>
 <p>more tests, especially for the web interface</p>
 </li>
 <li>
 <p>may a user have a different photograph every year?</p>
-</li>
-<li>
-<p>change the "orga" right name</p>
-</li>
-<li>
-<p>think about the user preferred language as a preference list:
-- ye2005,  pt =&gt; list = pt
-- fpw2005, fr =&gt; list = fr,pt
-- ipw2005, en =&gt; list = en,fr,pt
-at that point, we need to reconfigure the prefered language for
-the two other sites
-Another option is to add a lang field in participations, to have
-a favorite language per conference</p>
 </li>
 <li>
 <p>global user stats (top attendee, top speaker, etc)</p>
@@ -128,23 +94,20 @@ a favorite language per conference</p>
 <p>PDF immutable invoices</p>
 </li>
 <li>
-<p>replace Act::Object with a more trendy ORM</p>
-</li>
-<li>
 <p>create a eg/ directory with at least two example conferences</p>
 </li>
 <li>
 <p>support for per conference options, like
 - register the hotel (e.g. european hackathon 2007)
-- vegeratian food</p>
+- vegetarian food</p>
 </li>
 <li>
 <p>hackathons do not have talks. Support that by disabling the talks
 related handlers.</p>
 </li>
 <li>
-<p>allow a conference to put a limit on the number of "paying" attendees
-=&gt; it may actually need to be a limit to "committed" attendes, since
+<p>allow a conference to put a limit on the number of "paying" attendees</p>
+<p><b>=&gt;</b> it may actually need to be a limit to "committed" attendes, since
    speakers often have the entrance fee waived</p>
 </li>
 <li>
@@ -171,14 +134,30 @@ include information which is irrelevant to that event.</p>
 It should be possible to close registrations before the event start date.</p>
 </li>
 <li>
-<p>Change Password Mechanism
-There should be a way to change passwords.</p>
+<p>Optional SSL Protected Admin Login
+There should be an optional SSL protected login option, at least for admins,
+allowing them to login to the website without being evasedropped.</p>
+</li>
+<li>
+<p>Make it clear how to register for an event.
+  </p>
+<p><b>=&gt;</b> register for an event?</p>
+</li>
+<li>
+<p>replace Act::Form by Data::FormValidator
+  </p>
+<p><b>=&gt;</b> maybe. Act::Form seems to work well now.</p>
+</li>
+<li>
+<p>replace Act::Object with a more trendy ORM</p>
 </li>
 <li>
 <p>User Identification
 The login page asks for "User Identification", and this is not really clear.
 It's difficult to say what is the "user identification" needed. Maybe the
-text could be a bit more specific.</p>
+text could be a bit more specific.
+  </p>
+<p><b>=&gt;</b> Maybe. Does anyone really has trouble understanding the login form?</p>
 </li>
 <li>
 <p>Tracking Suspicious Users
@@ -186,27 +165,26 @@ There should be a way to track down, mark out and pay attention on
 /suspicious/ users, in special those that doesn't register properly or aren't
 known or findable. Those registrations cause a lot of trouble, making
 organizers to waste time and resources with room reservations, special meals
-and other resources for people that will never show up.</p>
+and other resources for people that will never show up.
+  </p>
+<p><b>=&gt;</b> the above definition of /suspicious/ seems pretty vague.</p>
 </li>
 <li>
-<p>Admin Statistics
-Admins and organizers should be able to have some statistics and accounting
-for his/her personal use. Simple things like "how many people will be present
-to the event?" or "how many of those people have special needs - special
-meals, special accommodations?" or "how many people are staying on the hotel
-we booked and how many aren't?" should do the trick.</p>
-</li>
-<li>
-<p>Optional SSL Protected Admin Login
-There should be an optional SSL protected login option, at least for admins,
-allowing them to login to the website without being evasedropped.</p>
-</li>
-<li>
-<p>Provide RSS Feeds to inform people interested on the projects.</p>
-</li>
-<li>
-<p>Make it clear how to register for an event.</p>
-<p>* Ensure users get clear and meaningful error messages when they get wrong
-  passwords or aren't registered in the system.</p>
+<p>think about the user preferred language as a preference list:
+- ye2005,  pt </p>
+<p><b>=&gt;</b> list = pt
+- fpw2005, fr </p>
+<p><b>=&gt;</b> list = fr,pt
+- ipw2005, en </p>
+<p><b>=&gt;</b> list = en,fr,pt
+at that point, we need to reconfigure the prefered language for
+the two other sites
+Another option is to add a lang field in participations, to have
+a favorite language per conference
+  </p>
+<p><b>=&gt;</b> overkill</p>
+<p>* a website for managing one's profile outside any conference
+    </p>
+<p><b>=&gt;</b> overkill</p>
 </li>
 </ul>

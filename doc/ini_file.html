@@ -12,11 +12,8 @@ conference.</p>
 
 <h2>Conference configuration</h2>
 <pre>    [general]
-    # this conference's base URI
-    # no leading or trailing slash
-    uri = foo2004
-    
-    # full production URI
+    # this conference's full production URI
+    # with trailing slash
     full_uri = http://conferences.mongueurs.net/foo2004/
     
     # supported languages, and the default language
@@ -48,6 +45,9 @@ conference.</p>
     # submission notification emails settings
     submissions_notify_address  = interventions@mongueurs.net
     submissions_notify_language = fr
+
+    # email the speaker when the talk is accepted
+    notify_accept = 1
     
     # can users edit talks?
     edition_open  = 1
@@ -57,6 +57,17 @@ conference.</p>
     
     # show accepted talks, or all
     show_all  = 0
+
+    # target audience. Omit this, and
+    # the [levels] section, if not used
+    levels = 4
+    
+    [levels]
+    # level names in all supported languages
+    level1_name_en = Any
+    level2_name_en = Beginner
+    level3_name_en = Intermediate
+    level4_name_en = Advanced
     
     [rooms]
     # list of rooms (must match /r\d+/)
