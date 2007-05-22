@@ -4,7 +4,7 @@
 <h2>Including news in a static page</h2>
 <pre>  [% PROCESS common %]
   &lt;div class="newsbox"&gt;
-    [% FOREACH item = news %]
+    [% FOREACH item = global.news %]
     &lt;p&gt;&lt;h3&gt;[% item.title %]&lt;/h3&gt;
     &lt;em&gt;[% date_format(item.datetime, 'datetime_short') %] by [% user_info(item.user) %]&lt;/em&gt;
     &lt;br&gt;
@@ -13,7 +13,7 @@
   &lt;/div&gt;</pre>
 
 <p>The number of items can be limited by supplying a count argument to <code>news</code>:</p>
-<pre>  [% FOREACH item = news(5) %]</pre>
+<pre>  [% FOREACH item = global.news(5) %]</pre>
 
 <h2>Atom feed</h2>
 <p>News items are available as an Atom feed. The feed's URL is</p>
