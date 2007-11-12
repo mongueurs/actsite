@@ -41,3 +41,15 @@ p {
   font-size: x-small;
   text-align: right;
 }
+
+hr { clear: both; }
+
+.menu {
+  text-align: left;
+  float: left;
+}
+
+.ad {
+  text-align: right;
+  float: right;
+}

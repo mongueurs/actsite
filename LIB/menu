@@ -1,8 +1,14 @@
 <div class="header">
+ <span class="menu">
    <a href="/">Home</a>
  | <a href="/conferences.html">Conferences</a>
  | <a href="/news.html">News</a>
  | <a href="/history.html">History</a>
  | <a href="/doc/Manual.html">Documentation</a>
+ </span>
+ <span class="ad">
+  <script type="text/javascript" src="http://adserver.szabgab.com/ads/direct_link.js"></script>
+ </span>
+<br />
 </div>
 <hr />
