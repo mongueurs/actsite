@@ -12,6 +12,21 @@
 [%# add new item just below, in reverse chronological order %]
 
 [%- WRAPPER add_news_item
+   date  = '14:00:00 04-02-2008'
+   title = 'Act in Hebrew, Russian, Ukrainian and Belarussian'
+-%]
+<p>
+The addition of Unicode opened the way for non-latin based translations.
+In the last few months, we've seen the addition of Hebrew (Perl Workshop
+in Israel), Russian (Russian Perl Workshop), Ukrainian (Ukrainian Perl
+Workshop) and Belarusian (Belarusian Perl Workshop).
+</p>
+<p>
+With YAPC::Asia, a Japanese translation is expected soon.
+</p>
+[%- END -%]
+
+[%- WRAPPER add_news_item
    date  = '20:45:00 03-04-2007'
    title = 'Act now uses Unicode in production'
 -%]
