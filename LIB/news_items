@@ -64,7 +64,7 @@ Act-related projects will include:
 <ul>
 <li>translations</li>
 <li>documentation</li>
-<li>new features from the copious <a href="/doc/todo.html">TODO list</a></li>
+<li>new features from the copious <a href="http://svnweb.mongueurs.net/Act/view/trunk/TODO">TODO list</a></li>
 <li>tests</li>
 </ul>
 [%- END -%]
