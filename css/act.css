@@ -21,6 +21,12 @@ p {
    margin-right: 1em;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
 /* classes */
 .box {
   float: left;
