@@ -12,6 +12,21 @@
 [%# add new item just below, in reverse chronological order %]
 
 [%- WRAPPER add_news_item
+   date  = '22:00:00 28-04-2008'
+   title = 'Act hosted one third of the first 100 Perl conferences'
+-%]
+<p>
+<a href="http://use.perl.org/~BooK/journal/36259">Philippe Bruhat (BooK)
+collated a list of all known grassroots Perl conferences.</a>
+Act (created in 2004) hosted 34 of the 99 Perl conferences
+organized since 1999! 
+</p><p>
+Counting only the conferences organized after Act was created, the ratio goes
+up to 44%. The world domination plan is coming along nicely... <tt>;-)</tt>
+</p>
+[%- END -%]
+
+[%- WRAPPER add_news_item
    date  = '14:00:00 04-02-2008'
    title = 'Act in Hebrew, Russian, Ukrainian and Belarussian'
 -%]
