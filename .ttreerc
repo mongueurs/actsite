@@ -16,3 +16,5 @@ pre_process = header
 post_process = footer
 pre_chomp = 1
 
+encoding = utf8
+binmode = :utf8
