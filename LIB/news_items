@@ -12,6 +12,15 @@
 [%# add new item just below, in reverse chronological order %]
 
 [%- WRAPPER add_news_item
+    date = '16:00:00 02-09-2008'
+    title = 'New translations: Slovak and Norwegian'
+-%]
+Act supports two new languages, thanks to Jozef Kutej (Slovak) and
+Ole Bendik Kvisberg (Norwegian). This brings the total of supported
+languages to 15!
+[%- END -%]
+
+[%- WRAPPER add_news_item
    date  = '22:00:00 28-04-2008'
    title = 'Act hosted one third of the first 100 Perl conferences'
 -%]
