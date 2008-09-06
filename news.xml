@@ -10,13 +10,13 @@
     FOREACH item = news.year.$year %]
   <entry>
     <title>[% item.title %]</title>
-    <id>http://act.mongueurs.net/news.xml[% item.anchor %]</id>
+    <id>http://act.mongueurs.net/news.xml#[% item.anchor %]</id>
     <author>
       <name>Act team</name>
     </author>
-    <updated>date.format(item.date, format => "%FT%TZ", gmt => 1)</updated>
+    <updated>[% date.format(item.date, format => "%FT%TZ", gmt => 1) %]</updated>
     <content type="html">[% item.text %]</content>
-    <link type="text/html" rel="alternate" href="http://act.mongueurs.net/news.xml[% item.anchor %]"/>
+    <link type="text/html" rel="alternate" href="http://act.mongueurs.net/news.html#[% item.anchor %]"/>
   </entry>
   [% END; END %]
 </feed>
