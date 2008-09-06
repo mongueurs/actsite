@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>[% title | remove('<.*?>') %]</title>
+<link rel="stylesheet" href="/css/act.css" type="text/css">
+<link rel="alternate" type="application/atom+xml" title="Act"
+      href="http://act.mongueurs.net/news.xml" />
+</head>
+<body bgcolor="#ffffff">
+[% PROCESS menu; content %]
+<div class="footer">
+<hr />
+Latest modification: 
+[% USE date; date.format(template.modtime, '%Y-%m-%d %H:%M') %]
+</div>
+</body>
+</html>

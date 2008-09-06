@@ -1,8 +1,6 @@
-[% META
-   type = 'main'
-   title = 'Act - A Conference Toolkit'
-%]
-[% PROCESS html_stuff %]
+[% META title = 'Act - A Conference Toolkit';
+   WRAPPER ui;
+   PROCESS html_stuff %]
 
 <h1>[% template.title %]</h1>
 
@@ -68,5 +66,4 @@ organisation of the repository.)
 <li><a href="/news.html">Act news</a></li>
 </ul>
 <p />
-[% END %]
-
+[% END; END %]

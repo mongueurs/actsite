@@ -1,5 +1,5 @@
-[% META
-   title = 'News'
+[% META title = 'News';
+   WRAPPER ui;
 %]
 [% PROCESS news_items %]
 [% USE date %]
@@ -10,5 +10,4 @@
 <h2>[% item.title %]</h2>
 <h3>[% date.format( item.date, format='%B %e', locale='C') %]</h3>
 [% item.text %]
-[% END ; END %]
-
+[% END ; END ; END %]

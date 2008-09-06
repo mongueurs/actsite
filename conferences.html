@@ -1,8 +1,6 @@
-[% META
-   type = 'main'
-   title = 'Act conferences'
-%]
-[% PROCESS html_stuff %]
+[% META title = 'Act conferences';
+   WRAPPER ui;
+   PROCESS html_stuff %]
 
 <style>
 .box h3 {
@@ -137,5 +135,4 @@ servers:
 <ul>
 <!-- 2008-06-06 --><li><a href="http://www.tlov.org/tlov2008/">Their Lives, Our Voices</a></li>
 </ul>
-[% END %]
-
+[% END ; END %]
