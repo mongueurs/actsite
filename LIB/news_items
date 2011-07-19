@@ -13,7 +13,7 @@
 
 
 [%- WRAPPER add_news_item
-    date = '15:41:00 02-07-2011'
+    date = '02:41:00 19-07-2011'
     title = 'Act sources now available to Git Hub'
 -%] 
 <p>Upon the request of many people, the repository has been migrated from Subversion
