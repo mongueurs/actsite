@@ -19,7 +19,7 @@
 <p>Upon the request of many people, the repository has been migrated from Subversion
 to Git, and uploaded to Git Hub:</p>
 <ul>
-<li><a href="https://github.com/book/Act">https://github.com/book/Act</li></li>
+<li><a href="https://github.com/book/Act">https://github.com/book/Act</a></li>
 </ul>
 <p>The test conferences are already running over a clone from this repository.</p>
 [%- END -%]
