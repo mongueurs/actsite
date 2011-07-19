@@ -11,6 +11,79 @@
 -%]
 [%# add new item just below, in reverse chronological order %]
 
+
+[%- WRAPPER add_news_item
+    date = '15:41:00 02-07-2011'
+    title = 'Act sources now available to Git Hub'
+-%] 
+<p>Upon the request of many people, the repository has been migrated from Subversion
+to Git, and uploaded to Git Hub:</p>
+<ul>
+<li><a href="https://github.com/book/Act">https://github.com/book/Act</li></li>
+</ul>
+<p>The test conferences are already running over a clone from this repository.</p>
+[%- END -%]
+
+
+[%- WRAPPER add_news_item
+    date = '00:22:00 15-07-2011'
+    title = 'New feature: proceedings page'
+-%]
+<p>Another feature that was requested, a proceedings page, to have all the talks
+in one page with their description and slides link. Available on all production sites.</p>
+<ul>
+<li><a href="http://www.perloasis.info/opw2011/proceedings">http://www.perloasis.info/opw2011/proceedings</li>
+<li><a href="http://journeesperl.fr/fpw2011/proceedings">http://journeesperl.fr/fpw2011/proceedings</li>
+<li><a href="http://www.yapc2011.us/yn2011/proceedings">http://www.yapc2011.us/yn2011/proceedings</li>
+<li><a href="http://yapceurope.lv/ye2011/proceedings">http://yapceurope.lv/ye2011/proceedings</li>
+</ul>
+[%- END -%]
+
+
+[%- WRAPPER add_news_item
+    date = '17:59:00 14-07-2011'
+    title = 'New feature: timezone in the ICS export'
+-%]
+<p>As requested by for some users, the ICS export now include timezone information:</p>
+<ul>
+<li>global calendar timezone (X-WR-TIMEZONE)</li>
+<li>timezone definition (VTIMEZONE/DAYLIGHT/STANDARD)</li>
+<li>all dates with TZID parameter</li>
+</ul>
+<p>Anyone who meets Richard Clamp, please offer him a drink, because his module
+Data::ICal::TimeZone does all the ugly job.</p>
+[%- END -%]
+
+
+[%- WRAPPER add_news_item
+    date = '15:41:00 02-07-2011'
+    title = 'New feature: Faces of conference'
+-%]
+<p>"Faces" is a page grouping the name and photo (if any) of all committed attendees.
+This is available for all conferences in production.</p>
+<p>Examples:</p>
+<ul>
+<li><a href="http://yapceurope.lv/ye2011/faces">http://yapceurope.lv/ye2011/faces</a></li>
+<li><a href="http://www.yapc2011.us/yn2011/faces">http://www.yapc2011.us/yn2011/faces</li></li>
+</ul>
+[%- END -%]
+
+
+[%- WRAPPER add_news_item
+    date = '19:36:00 04-06-2011'
+    title = 'New properties in the iCalendar export'
+-%]
+<p>The iCal export now has a few new properties:</p>
+<ul>
+<li>ORGANIZER (unique) contains the name of the speaker</li>
+<li>COMMENT (repeatable) contains the number of attendees to this talk</li>
+<li>ATTENDEE (repeatable) contains the name of an attendee</li>
+</ul>
+[%- END -%]
+
+
+
+
 [%- WRAPPER add_news_item
     date = '16:00:00 02-09-2008'
     title = 'New translations: Slovak and Norwegian'
