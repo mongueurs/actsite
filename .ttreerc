@@ -3,10 +3,11 @@ preserve
 
 ignore = \b(CVS|RCS|LIB)\b
 ignore = ^#
-ignore = \.git$
-ignore = \.svn$
+ignore = ^\.git
+ignore = ^\.svn$
 ignore = \.swp$
-ignore = \.ttreerc
+ignore = ^\.ttreerc$
+ignore = \.pl$
 
 copy = \.(gif|ico|jpe?g|pdf|png|ps)$
 copy = \.(css|cgi|txt)$
