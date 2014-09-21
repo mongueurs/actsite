@@ -1,0 +1,158 @@
+[% META title = 'Act Fund';
+   WRAPPER ui;
+   PROCESS html_stuff %]
+
+<h1><a name="description">Fund for Act development</a></h1>
+
+<p>September 21, 2014</p>
+
+<p> Act (A Conference Toolkit) is the conference management tool
+that has been used to organize more than 175 Perl conferences in the
+last ten years. Rewritten in 2004, based on the software used to run
+the <a href="http://conferences.mongueurs.net/ye2003/">YAPC::Europe
+conference in Paris in 2003</a>, it was open sourced in 2007.
+<a href="conferences.html">Since then, 6 different Act instances have been
+setup around the world, hosting a grand total of 183 conferences so far.</a>
+</p>
+
+<p>
+In the last few years, the software has started to show its age: very
+few new features have been added, and the users and conferences organizers
+have had to learn to work their way around its limitations. As it is the
+<i>de facto</i> standard for organizing Perl conferences, there have been
+several attempts to rejuvenate it (the YAPC NA 2012 team forked it to use PSGI,
+<a href="http://news.perlfoundation.org/2013/05/2013q2-gp-yact---yet-another-c.html">Torsten
+Raudssus started the YACT project under a TPF Grant</a>, etc.)
+</p>
+<p>
+<a href="http://news.perlfoundation.org/2014/07/grant-proposal-start-act---voy.html">The
+latest attempt by Theo van Hoesel, also under a TPF Grant</a>, has managed
+to round up a lot of goodwill around it, including that of some of the
+original authors.
+</p>
+<p>
+<a href="http://www.mongueurs.net/">The French Perl Mongers</a>, who
+authored <a href="https://github.com/book/Act">Act</a> and are running
+the biggest Act instance (155 conferences so far), would very much like
+to push Act in the modern age. In support for the current effort led by
+Theo van Hoesel (and other future efforts) to improve Act, the French
+Perl Mongers are setting up an "Act fund" to cover the expenses of Act
+hackers participating to the improvement of Act.
+</p>
+<p>
+This fund is not meant to pay salaries, or offer grants, but to cover
+travel and accommodation of hackers involved in the current and future
+efforts to improve Act. The Act fund will be fully disclosed to the
+public, on the Act website, with all income and expenses listed.
+(See <a href="#fund">below</a>.)
+</p>
+<p>
+The goal of the fund is to help the people working to improve Act, so
+that the Perl community can finally <i>have an improved Act</i> to use.
+Some of it is by getting the keepers of the main database (the French Perl
+Mongers) more involved with what's happening. Another big part of it
+is to facilitate communication between the people the more involved in
+the project. Hackathons have proved their worth, mostly because of the
+value of face-to-face communication.
+</p>
+<p>
+The two Act-related events following the creation of the fund are the
+upcoming hackathons in <a href="http://patch.pm/p2/">Lyon</a> and <a
+href="http://osdc.no">Oslo</a>, which both will be, in part or full,
+focused on Act improvements.
+</p>
+
+<h1><a name="fund">Status of the Act Fund</a></h1>
+
+[% BLOCK financial_report ;
+   debit_total  = 0 ;
+   credit_total = 0
+%]
+<table class="financial_report">
+ <tr>
+  <th>Date</th>
+  <th>Description</th>
+  <th>Debit</th>
+  <th>Credit</th>
+ </tr>
+[% FOR line IN data %]
+[% credit = 0 ; debit = 0 ;
+   IF line.2 > 0 ; credit = line.2 ; ELSE ; debit = line.2 ; END %]
+ <tr>
+  <td>[% line.0 %]</td>
+  <td>[% line.1 %]</td>
+  <td class="amount">[% debit  || "" | format( "%.2f" ) %]</td>
+  <td class="amount">[% credit || "" | format( "%.2f" ) %]</td>
+ </tr>
+[% debit_total  = debit_total + debit ;
+   credit_total = credit_total + credit ;
+%]
+[% END %]
+ <tr>
+  <th colspan="2">Total</th>
+  <th class="amount">[% debit_total  || 0 | format( "%.2f" ) %]</th>
+  <th class="amount">[% credit_total || 0 | format( "%.2f" ) %]</th>
+ </tr>
+ <tr>
+  <th colspan="2">Balance</th>
+  <th class="amount" colspan="2"> [% ( credit_total + debit_total ) | format( "%.2f" ) %]</th>
+ </tr>
+</table>
+[% END %]
+
+<style>
+/* style for financial reports */
+table.financial_report {
+    margin: 0 0 3em 3em;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.financial_report tr {
+    padding: 1em 0 1em 0;
+    text-align: left;
+    border-top: 1px dotted gray;
+}
+.financial_report th {
+    text-align: left;
+    padding-left: 1ex;
+    padding-right: 1ex;
+    border: 1px solid black;
+}
+.financial_report td {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: left;
+    border-left: 1px solid black;
+}
+.amount {
+   text-align: right !important;
+   padding-right: 1ex !important;
+   padding-left: 3em;
+   width: 15%;
+}
+</style>
+
+[% PROCESS financial_report data = [
+   [ "Now!", "Your donation", 0 ]
+   ]
+%]
+
+<h2><a name="donate">Donate to the Act Fund</a></h2>
+
+<p>
+If like us, you think Act is important for the Perl community, please
+consider participating to the Act fund. Either use the Paypal button
+on this page, or contact the treasurer of Les Mongueurs de Perl at
+<code>tresorier@mongueurs.net</code>.
+</p>
+
+<center>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="AN29UD52NRXC8">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+</form>
+</center>
+
+[% END %]
