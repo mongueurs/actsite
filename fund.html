@@ -102,7 +102,7 @@ focused on Act improvements.
 
 <style>
 /* style for financial reports */
-table.financial_report {
+table {
     margin: 0 0 3em 3em;
     border: 1px solid black;
     border-collapse: collapse;
@@ -130,6 +130,19 @@ table.financial_report {
    padding-left: 3em;
    width: 15%;
 }
+.donate .main {
+    border: 1px solid black;
+}
+.donate th {
+    text-align: center;
+    padding-left: 1ex;
+    padding-right: 1ex;
+}
+.donate td {
+    text-align: left;
+    padding-left: 1ex;
+    padding-right: 1ex;
+}
 </style>
 
 [% PROCESS financial_report data = [
@@ -141,18 +154,30 @@ table.financial_report {
 
 <p>
 If like us, you think Act is important for the Perl community, please
-consider participating to the Act fund. Either use the Paypal button
-on this page, or contact the treasurer of Les Mongueurs de Perl at
-<code>tresorier@mongueurs.net</code>.
+consider participating to the Act fund.
+</p><p>
+To do so, either use the Paypal button on this page, or do a direct
+transfer using the information below (please state "ACT FUND" on
+your transfer, and contact the treasurer of Les Mongueurs de Perl at
+<code>tresorier@mongueurs.net</code>, to let use know about your donation
+and how you want it to appear on this page).
 </p>
 
-<center>
+<table class="donate">
+<tr class="main"><th class="main">PayPal</th><th colspan="2">Direct transfer</th><tr>
+<tr><td rowspan="4" class="main">
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="AN29UD52NRXC8">
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
 <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
 </form>
+</td>
+    <th>Name</th><td> LES MONGUEURS DE PERL</td></tr>
+<tr><th>Bank</th><td> CIC - Paris Villiers</td></tr>
+<tr><th>IBAN</th><td> FR76 3006 6108 7600 0102 7540 188</td></tr>
+<tr><th>BIC</th><td>  CMCIFRPP</td></tr>
+</table>
 </center>
 
 [% END %]
