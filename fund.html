@@ -77,7 +77,7 @@ focused on Act improvements.
  </tr>
 [% FOR line IN data %]
 [% credit = 0 ; debit = 0 ;
-   IF line.2 > 0 ; credit = line.2 - (line.3 || 0) ; ELSE ; debit = line.2 ; END %]
+   IF line.2 && line.2 > 0 ; credit = line.2 - (line.3 || 0) ; ELSE ; debit = ( line.2 || 0 ) ; END %]
  <tr>
   <td>[% line.0 %]</td>
   <td>[% line.1 %]</td>
@@ -152,6 +152,7 @@ table {
    [ "2014-09-30", "Ricardo Signes (€75 via PayPal)",     75, 3.18 ]
    [ "2014-09-30", "zak zebrowski (€5 via PayPal)",        5, 0.45 ]
    [ "2014-10-01", "Lukáš Rampa (€15 via PayPal)",        15, 0.76 ]
+   [ "2014-10-02", '<a href="http://oslo.pm.org/">Oslo.pm</a> (€1000, minus travel for two to the <a href="http://patch.pm/p2/">Lyon hackathon</a>)' ]
   ]
 %]
 
