@@ -13,11 +13,24 @@
 
 
 [%- WRAPPER add_news_item
+    date = '15:26:56 21-09-2014'
+    title = 'Announing the fund for Act development'
+-%]
+<p>
+To support the effort of hackers willing to improve Act, the
+<a href="http://www.mongueurs.net/">French Perl Mongers</a> have
+set up a <a href="http://act.mongueurs.net/fund.html">fund for Act
+development</a>, which will support Act hackathons and hackers over
+the world.
+</p>
+[%- END -%]
+
+[%- WRAPPER add_news_item
     date = '02:41:00 19-07-2011'
     title = 'Act sources now available to Git Hub'
--%] 
+-%]
 <p>Upon the request of many people, the repository has been migrated from Subversion
-to Git, and uploaded to Git Hub:</p>
+to Git, and uploaded to GitHub:</p>
 <ul>
 <li><a href="https://github.com/book/Act">https://github.com/book/Act</a></li>
 </ul>
